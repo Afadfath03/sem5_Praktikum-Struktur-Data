@@ -1,0 +1,42 @@
+
+    int a, c;
+    string pembilang = "", puluhan = "";
+    cout << "Angka: ";
+    cin >> a;
+
+    if (a >= 20 && a < 30) { puluhan = "Dua puluh "; }
+    else if (a >= 30 && a < 40) { puluhan = "Tiga puluh "; }
+    else if (a >= 40 && a < 50) { puluhan = "Empat puluh "; }
+    else if (a >= 50 && a < 60) { puluhan = "Lima puluh "; }
+    else if (a >= 60 && a < 70) { puluhan = "Enam puluh "; }
+    else if (a >= 70 && a < 80) { puluhan = "Tujuh puluh "; }
+    else if (a >= 80 && a < 90) { puluhan = "Delapan puluh "; }
+    else if (a >= 90 && a < 100) { puluhan = "Sembilan puluh "; }
+
+    c = a;
+
+    if (a > 19){ while(c > 9){ c = c - 10; } }
+
+    if (c == 1) pembilang = "satu";
+    else if (c == 2) pembilang = "dua";
+    else if (c == 3) pembilang = "tiga";
+    else if (c == 4) pembilang = "empat";
+    else if (c == 5) pembilang = "lima";
+    else if (c == 6) pembilang = "enam";
+    else if (c == 7) pembilang = "tujuh";
+    else if (c == 8) pembilang = "delapan";
+    else if (c == 9) pembilang = "sembilan";
+    else if (c == 10) pembilang = "sepuluh";
+    else if (c == 11) pembilang = "sebelas";
+    else if (c == 12) pembilang = "dua belas";
+    else if (c == 13) pembilang = "tiga belas";
+    else if (c == 14) pembilang = "empat belas";
+    else if (c == 15) pembilang = "lima belas";
+    else if (c == 16) pembilang = "enam belas";
+    else if (c == 17) pembilang = "tujuh belas";
+    else if (c == 18) pembilang = "delapan belas";
+    else if (c == 19) pembilang = "sembilan belas";
+
+    if (a + c == 0){pembilang = "Nol"; }
+
+    cout << puluhan << pembilang << endl;
