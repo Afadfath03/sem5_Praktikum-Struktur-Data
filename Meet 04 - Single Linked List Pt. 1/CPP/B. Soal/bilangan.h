@@ -12,4 +12,14 @@ void viewBilangan(Bilangan *head);
 
 void TambahDiAwal(Bilangan *&head, int AngkaBaru);
 
+void TambahDiAkhir(Bilangan *&head, int AngkaBaru);
+
+void SisipkanAngkaSebelum(Bilangan *&head, int AngkaBaru, int AngkaSebelum);
+
+void hapusAwal(Bilangan *&head);
+
+void hapusAkhir(Bilangan *&head);
+
+void hapusSebelumPosisi(Bilangan *&head, int Posisi);
+
 #endif // BILANGAN_H
