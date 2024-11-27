@@ -3,15 +3,15 @@
 using namespace std;
 
 struct Node {
-    string data;
+    int data;
     vector<Node*> children;
 
-    Node(string value) {
+    Node(int value) {
         data = value;
     }
 };
 
-void tambahAnak(Node* parent, string value) {
+void tambahAnak(Node* parent, int value) {
     Node* child = new Node(value);
     parent->children.push_back(child);
 }
@@ -28,16 +28,16 @@ void cetakTree(Node* root, int depth = 0) {
 }
 
 int main() {
-    Node* root = new Node("A");
+    Node* root = new Node(1);
 
-    tambahAnak(root, "B");
-    tambahAnak(root, "C");
-    tambahAnak(root, "D");
+    tambahAnak(root, 2);
+    tambahAnak(root, 3);
+    tambahAnak(root, 4);
 
-    tambahAnak(root->children[0], "E");
-    tambahAnak(root->children[0], "F");
+    tambahAnak(root->children[0], 5);
+    tambahAnak(root->children[0], 6);
 
-    tambahAnak(root->children[1], "G");
+    tambahAnak(root->children[1], 7);
 
     cout << "Tree:" << endl;
     cetakTree(root);

@@ -1,78 +1,51 @@
 #include <iostream>
 using namespace std;
 
-// Definisi struktur node untuk Binary Search Tree
-struct Node
-{
+struct Node {
     int data;
     Node *left;
     Node *right;
 
-    Node(int value)
-    {
+    Node(int value) {
         data = value;
         left = right = nullptr;
     }
 };
 
-// Fungsi untuk menambahkan elemen ke BST
-Node *insert(Node *root, int value)
-{
-    if (root == nullptr)
-    {
-        return new Node(value); // Membuat node baru jika pohon kosong
+Node *insert(Node *root, int value) {
+    if (root == nullptr) {
+        return new Node(value);
     }
 
-    if (value < root->data)
-    {
-        root->left = insert(root->left, value); // Insert ke subtree kiri
+    if (value < root->data) {
+        root->left = insert(root->left, value);
     }
-    else if (value > root->data)
-    {
-        root->right = insert(root->right, value); // Insert ke subtree kanan
+    else if (value > root->data) {
+        root->right = insert(root->right, value);
     }
 
-    return root; // Mengembalikan root
+    return root;
 }
 
-// Fungsi untuk melakukan pencarian elemen di BST
-bool search(Node *root, int value)
-{
-    if (root == nullptr)
-    {
-        return false; // Elemen tidak ditemukan
-    }
+bool search(Node *root, int value){
+    if (root == nullptr) return false;
 
-    if (root->data == value)
-    {
-        return true; // Elemen ditemukan
-    }
-    else if (value < root->data)
-    {
-        return search(root->left, value); // Cari di subtree kiri
-    }
-    else
-    {
-        return search(root->right, value); // Cari di subtree kanan
+    if (root->data == value) return true;
+    else if (value < root->data) return search(root->left, value);
+    else return search(root->right, value);
+}
+
+void inOrderTraversal(Node *root) {
+    if (root != nullptr) {
+        inOrderTraversal(root->left);
+        cout << root->data << " ";
+        inOrderTraversal(root->right);
     }
 }
 
-// Fungsi untuk mencetak elemen BST secara in-order
-void inOrderTraversal(Node *root)
-{
-    if (root != nullptr)
-    {
-        inOrderTraversal(root->left);  // Kunjungi subtree kiri
-        cout << root->data << " ";     // Cetak data node
-        inOrderTraversal(root->right); // Kunjungi subtree kanan
-    }
-}
-
-int main()
-{
+int main() {
     Node *root = nullptr;
 
-    // Memasukkan elemen ke dalam BST
     root = insert(root, 50);
     root = insert(root, 30);
     root = insert(root, 70);
@@ -81,12 +54,10 @@ int main()
     root = insert(root, 60);
     root = insert(root, 80);
 
-    // Menampilkan elemen BST secara in-order
     cout << "In-order Traversal: ";
     inOrderTraversal(root);
     cout << endl;
 
-    // Mencari elemen dalam BST
     int key = 40;
     if (search(root, key))
     {

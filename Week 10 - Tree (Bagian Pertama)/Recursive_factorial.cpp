@@ -10,7 +10,7 @@ int factorial(int n) {
 
 int main() {
     int num;
-    cout << "Masukkan bilangan untuk menghitung faktorial: ";
+    cout << "Masukkan bilangan : ";
     cin >> num;
 
     if (num < 0) {
