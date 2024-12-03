@@ -58,15 +58,15 @@ int main() {
     inOrderTraversal(root);
     cout << endl;
 
-    int key = 40;
-    if (search(root, key))
-    {
-        cout << "Element " << key << " found in BST." << endl;
-    }
-    else
-    {
-        cout << "Element " << key << " not found in BST." << endl;
-    }
+    // int key = 40;
+    // if (search(root, key))
+    // {
+    //     cout << "Element " << key << " found in BST." << endl;
+    // }
+    // else
+    // {
+    //     cout << "Element " << key << " not found in BST." << endl;
+    // }
 
     return 0;
 }
